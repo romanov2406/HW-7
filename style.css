@@ -1,0 +1,118 @@
+body {
+  font-family: 'Sansita Swashed', cursive;
+}
+
+.header {
+  padding: 10px;
+  text-align: center;
+  width: 1200px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
+}
+
+.header input + button {
+  height: 35px;
+}
+
+.header input {
+  outline: none;
+}
+
+.header button {
+  cursor: pointer;
+  background-color: green;
+  color: white;
+  outline: none;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  font-weight: bold;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 550px;
+  grid-auto-columns: 300px;
+  width: 1200px;
+  grid-gap: 10px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.container .content {
+  border-radius: 4px;
+  overflow: hidden;
+  text-align: center;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.container .content:hover {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+
+.container .content img {
+  width: 100%;
+  height: 70%;
+  cursor: pointer;
+}
+
+.container .content .title {
+  padding: 5px;
+  color: #afabab;
+  text-align: center;
+  font-size: 16px;
+  overflow: hidden;
+  height: 25px;
+}
+
+.container .content .details {
+  cursor: pointer;
+  width: 100%;
+  height: 30px;
+  font-size: 15px;
+  color: white;
+  background-color: green;
+  border: 1px solid #b6a9a9;
+  border-radius: 4px;
+}
+
+.about {
+  width: 900px;
+  height: 540px;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  -ms-grid-columns: 400px 500px;
+      grid-template-columns: 400px 500px;
+  overflow: hidden;
+}
+
+.about .about-img {
+  overflow: hidden;
+}
+
+.about .about-img img {
+  height: 540px;
+}
+
+.about .about-info {
+  top: 58px;
+  left: 358px;
+  background-color: #fff;
+}
+
+.about .about-info .about-title {
+  text-align: center;
+  padding: 10px;
+}
+/*# sourceMappingURL=style.css.map */

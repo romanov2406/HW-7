@@ -1,0 +1,116 @@
+body {
+    font-family: 'Sansita Swashed', cursive;
+}
+
+.header {
+    padding: 10px;
+    text-align: center;
+    width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+
+    input+button {
+        // outline: none;
+        height: 35px;
+
+    }
+
+    input {
+        // cursor: pointer;
+        outline: none;
+        // border-radius: 3px;
+
+    }
+
+    button {
+        cursor: pointer;
+        background-color: green;
+        color: white;
+        outline: none;
+        border-radius: 3px;
+        outline: none;
+        border: none;
+        font-weight: bold;
+    }
+
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 550px;
+    grid-auto-columns: 300px;
+    width: 1200px;
+    grid-gap: 10px;
+    margin: 0 auto;
+    padding: 0;
+
+
+    .content {
+        border-radius: 4px;
+        overflow: hidden;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+        &:hover {
+            transform: scale(0.99);
+        }
+
+        img {
+            width: 100%;
+            height: 70%;
+            cursor: pointer;
+        }
+
+        .title {
+            padding: 5px;
+            color: rgb(175, 171, 171);
+            text-align: center;
+            font-size: 16px;
+            overflow: hidden;
+            height: 25px;
+        }
+
+        // btn
+        .details {
+            cursor: pointer;
+            width: 100%;
+            height: 30px;
+            font-size: 15px;
+            color: white;
+            background-color: green;
+            border: 1px solid rgb(182, 169, 169);
+            border-radius: 4px;
+        }
+    }
+}
+
+.about {
+    width: 900px;
+    height: 540px;
+    margin: 0 auto;
+    display: grid;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    grid-template-columns: 400px 500px;
+    overflow: hidden;
+
+    .about-img {
+        overflow: hidden;
+
+        img {
+            height: 540px;
+        }
+    }
+
+    .about-info {
+        top: 58px;
+        left: 358px;
+        background-color: #fff;
+
+        .about-title {
+            text-align: center;
+            padding: 10px;
+        }
+    }
+}
