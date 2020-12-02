@@ -20,7 +20,7 @@ search.addEventListener('click', function () {
                 <div class="title">${el.Title}</div>
                 <h5>${el.Type}</h5>
                 <h5>${el.Year}</h5>
-                <button class="details" id="${el.imdbID}" onclick="AboutFilm()">More details</button></div>`;
+                <button class="details" id="${el.imdbID}" onclick="AboutFilm(event)">More details</button></div>`;
             });
         }
     }
@@ -29,30 +29,42 @@ search.addEventListener('click', function () {
 
 });
 
-function closeAlert() {
-    about.innerHTML = ''
-    about.style.display = ' none';
-    console.log('work');
+modalOpen = false;
+
+function closeAlert(e) {
+    if ((e.target === document.querySelector('.close') || !document.querySelector('.about').contains(e.target)) && modalOpen) {
+        modalOpen = false;
+        about.innerHTML = ''
+        about.style.display = ' none';
+    }
 }
 
-function AboutFilm() {
+window.addEventListener('click', closeAlert);
+
+function AboutFilm(e) {
+    e.stopImmediatePropagation();
+    modalOpen = true;
     let jj = user.Search.find(el => el.imdbID === event.target.id)
     about.style.position = 'fixed'
     about.style.top = ' 58px';
     about.style.left = ' 358px';
     about.style.display = ' grid';
 
-    let all
     fetch(`http://www.omdbapi.com/?t=${jj.Title}&page=2&apikey=2a95a77e`)
         .then(response => response.json())
         .then(movieDetails => {
+            let ratingsList = '';
+            
             for (let el of movieDetails.Ratings) {
+                ratingsList += ' ' + el.Source + ' ' + el.Value + ' ';
+            }
+
                 about.innerHTML = `
                 <div class="about-img">
                 <img src="${movieDetails.Poster}" alt="">
                 </div>
                 <div class="about-info">
-                <div class="close" onclick="closeAlert()">Close</div>
+                <div class="close">Close</div>
             <div class="about-title">
               ${movieDetails.Title}
             </div>
@@ -78,9 +90,8 @@ function AboutFilm() {
                 <span>Awards: </span> ${movieDetails.Awards}
             </div>
             <div class="ratings">
-                <span>Ratings: </span> ${all += ' ' + el.Source + ' ' + el.Value + ' '}
+                <span>Ratings: </span> ${ratingsList}
             </div>
         </div>`
-            }
         });
 }

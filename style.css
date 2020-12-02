@@ -53,11 +53,6 @@ body {
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.container .content:hover {
-  -webkit-transform: scale(0.99);
-          transform: scale(0.99);
-}
-
 .container .content img {
   width: 100%;
   height: 70%;
