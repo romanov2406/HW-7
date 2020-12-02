@@ -82,6 +82,7 @@ body {
             background-color: green;
             border: 1px solid rgb(182, 169, 169);
             border-radius: 4px;
+            outline: none;
         }
     }
 }
@@ -94,6 +95,8 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     grid-template-columns: 400px 500px;
     overflow: hidden;
+    background-color: white;
+    transition: .4s ease-in-out;
 
     .about-img {
         overflow: hidden;
@@ -107,10 +110,49 @@ body {
         top: 58px;
         left: 358px;
         background-color: #fff;
+        padding: 10px 10px;
 
         .about-title {
             text-align: center;
             padding: 10px;
+            font-weight: bold;
+        }
+        .writtetBy{
+            span{
+                font-weight: bold;
+            }
+        }
+        .plot{
+            padding: 10px 0 10px;
+        }
+        .directedBy{
+            padding: 10px 0;
+            span{
+                font-weight: bold;
+            }
+        }
+        .starring{
+            span{
+                font-weight: bold;
+            }
+        }
+        .boxOffice{
+            padding: 10px 0;
+            span{
+                font-weight: bold;
+            }
+        }
+        .awards{
+            padding: 10px 0;
+            span{
+                font-weight: bold;
+            }
+        }
+        .ratings{
+            padding: 10px 0;
+            span{
+                font-weight: bold;
+            }
         }
     }
 }

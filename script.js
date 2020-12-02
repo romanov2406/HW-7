@@ -33,12 +33,51 @@ search.addEventListener('click', function () {
 
 });
 
-function AboutFilm(){
-    let jj = user.Search.filter(el => el.imdbID === event.target.id)
-    // about.style.position =  'fixed'
-    // about.style.top =  ' 58px';
-    // about.style.left =  ' 358px';
-    console.log(jj);
-   
-}
+function AboutFilm() {
+    let jj = user.Search.find(el => el.imdbID === event.target.id)
+    about.style.position = 'fixed'
+    about.style.top = ' 58px';
+    about.style.left = ' 358px';
+    let all
+    fetch(`http://www.omdbapi.com/?t=${jj.Title}&page=2&apikey=2a95a77e`)
+        .then(response => response.json())
+        .then(movieDetails => {
+            for (let el of movieDetails.Ratings) {
+                // all += el.Source + '' + el.Value
+                // console.log(all);
+            
 
+            about.innerHTML  = `<div class="about-img">
+            <img src="${movieDetails.Poster}" alt="">
+            </div>
+            <div class="about-info">
+            <div class="about-title">
+              ${movieDetails.Title}
+            </div>
+            <div class="genre">
+                ${movieDetails.Genre}: ${movieDetails.Rated}
+            </div>
+            <div class="plot">
+               ${movieDetails.Plot}
+            </div>
+            <div class="writtetBy">
+                <span>WrittetBy:</span> ${movieDetails.Writer}
+            </div>
+            <div class="directedBy">
+               <span>Directed By: </span>${movieDetails.Director}
+            </div>
+            <div class="starring">
+                <span>Starring: </span>${movieDetails.Actors}
+            </div>
+            <div class="boxOffice">
+             <span>Box Office: </span> ${movieDetails.BoxOffice}
+            </div>
+            <div class="awards">
+                <span>Awards: </span> ${movieDetails.Awards}
+            </div>
+            <div class="ratings">
+                <span>Ratings: </span> ${all += ' ' + el.Source + ' ' + el.Value + ' '}
+            </div>
+        </div>`}
+        });
+}

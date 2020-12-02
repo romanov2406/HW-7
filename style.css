@@ -82,6 +82,7 @@ body {
   background-color: green;
   border: 1px solid #b6a9a9;
   border-radius: 4px;
+  outline: none;
 }
 
 .about {
@@ -95,6 +96,9 @@ body {
   -ms-grid-columns: 400px 500px;
       grid-template-columns: 400px 500px;
   overflow: hidden;
+  background-color: white;
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
 }
 
 .about .about-img {
@@ -109,10 +113,56 @@ body {
   top: 58px;
   left: 358px;
   background-color: #fff;
+  padding: 10px 10px;
 }
 
 .about .about-info .about-title {
   text-align: center;
   padding: 10px;
+  font-weight: bold;
+}
+
+.about .about-info .writtetBy span {
+  font-weight: bold;
+}
+
+.about .about-info .plot {
+  padding: 10px 0 10px;
+}
+
+.about .about-info .directedBy {
+  padding: 10px 0;
+}
+
+.about .about-info .directedBy span {
+  font-weight: bold;
+}
+
+.about .about-info .starring span {
+  font-weight: bold;
+}
+
+.about .about-info .boxOffice {
+  padding: 10px 0;
+}
+
+.about .about-info .boxOffice span {
+  font-weight: bold;
+}
+
+.about .about-info .awards {
+  padding: 10px 0;
+}
+
+.about .about-info .awards span {
+  font-weight: bold;
+}
+
+.about .about-info .ratings {
+  padding: 10px 0;
+}
+
+.about .about-info .ratings span {
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */
