@@ -1,12 +1,8 @@
-// http://www.omdbapi.com/?i=tt3896198&apikey=2a95a77e
-
-
 const container = document.querySelector('.container');
 
 let search = document.querySelector('#search');
 let suchen = document.querySelector('#suchen');
 const about = document.querySelector('.about');
-
 let user
 const xhr = new XMLHttpRequest();
 
@@ -43,11 +39,7 @@ function AboutFilm() {
         .then(response => response.json())
         .then(movieDetails => {
             for (let el of movieDetails.Ratings) {
-                // all += el.Source + '' + el.Value
-                // console.log(all);
-            
-
-            about.innerHTML  = `<div class="about-img">
+                about.innerHTML = `<div class="about-img">
             <img src="${movieDetails.Poster}" alt="">
             </div>
             <div class="about-info">
@@ -78,6 +70,7 @@ function AboutFilm() {
             <div class="ratings">
                 <span>Ratings: </span> ${all += ' ' + el.Source + ' ' + el.Value + ' '}
             </div>
-        </div>`}
+        </div>`
+            }
         });
 }
