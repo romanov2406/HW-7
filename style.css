@@ -99,6 +99,7 @@ body {
   background-color: white;
   -webkit-transition: .4s ease-in-out;
   transition: .4s ease-in-out;
+  display: none;
 }
 
 .about .about-img {
@@ -114,6 +115,12 @@ body {
   left: 358px;
   background-color: #fff;
   padding: 10px 10px;
+}
+
+.about .about-info .close {
+  text-align: right;
+  padding: 0 10px 0 0;
+  cursor: pointer;
 }
 
 .about .about-info .about-title {

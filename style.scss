@@ -97,6 +97,7 @@ body {
     overflow: hidden;
     background-color: white;
     transition: .4s ease-in-out;
+    display: none;
 
     .about-img {
         overflow: hidden;
@@ -111,7 +112,11 @@ body {
         left: 358px;
         background-color: #fff;
         padding: 10px 10px;
-
+        .close{
+            text-align: right;
+            padding: 0 10px 0 0;
+            cursor: pointer;
+        }
         .about-title {
             text-align: center;
             padding: 10px;

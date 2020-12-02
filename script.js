@@ -29,20 +29,30 @@ search.addEventListener('click', function () {
 
 });
 
+function closeAlert() {
+    about.innerHTML = ''
+    about.style.display = ' none';
+    console.log('work');
+}
+
 function AboutFilm() {
     let jj = user.Search.find(el => el.imdbID === event.target.id)
     about.style.position = 'fixed'
     about.style.top = ' 58px';
     about.style.left = ' 358px';
+    about.style.display = ' grid';
+
     let all
     fetch(`http://www.omdbapi.com/?t=${jj.Title}&page=2&apikey=2a95a77e`)
         .then(response => response.json())
         .then(movieDetails => {
             for (let el of movieDetails.Ratings) {
-                about.innerHTML = `<div class="about-img">
-            <img src="${movieDetails.Poster}" alt="">
-            </div>
-            <div class="about-info">
+                about.innerHTML = `
+                <div class="about-img">
+                <img src="${movieDetails.Poster}" alt="">
+                </div>
+                <div class="about-info">
+                <div class="close" onclick="closeAlert()">Close</div>
             <div class="about-title">
               ${movieDetails.Title}
             </div>
